@@ -1,25 +1,32 @@
-# Ui-mixin-helpers
+# `ui-mixin-helpers`
 
-This README outlines the details of collaborating on this Ember addon.
+> A set of mixins that are useful for building Ember components
 
-## Installation
+## Installation ##
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
 
-## Running
+* change directories to your project folder
+* `ember install:addon ui-number-input`
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+That's it, it's available to your components through the standard **Mixin** syntax:
 
-## Running Tests
+````javascript
 
-* `ember test`
-* `ember test --server`
+## Mixins Included ##
 
-## Building
+Installing this addon will allow you to use the following Mixins in your components/views:
 
-* `ember build`
+- `InputStatusMixin`
+	manages all the functionality around *status* rules and styling. This mixin has the following dependencies:
+	
+	- `classNameBindings` - expects to have 'statusClass' and 'statusVisualze' listed in the bindings array
+	- `status`, `statusIsDefault`, `statusVisualize` become reserved names
+- `InputCorrectionMixin`
+	Adds *auto-correction* rules functionality
 
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
+	- `defaultCorrectionRules` will be blank unless the implementing component sets this themselves (blank may be the desired state)
+	- `correctionRules` is exposed as a property so that rules can be added by containing view at run time
+
+- `InputAnimationMixin`
+- `UiEventListenerMixin`
+
