@@ -48,7 +48,7 @@ export default Ember.Mixin.create({
 				// EXTERNAL RULE
 				if(isEmpty(correction.id)) {
 					console.warn('External correction rule does not have an ID. Ignoring. %o', correction);
-				} else if(isEmpty(correction.rule) || ofType(correction.rule) !== 'function') {
+				} else if(isEmpty(correction.rule) || typeOf(correction.rule) !== 'function') {
 					console.warn('Correction rule "%s" is missing its rule definition!', correction.id);						
 				} else if(isEmpty(correction.event)) {
 					console.warn('Correction rule "%s" is missing an event definition.', correction.id);						
